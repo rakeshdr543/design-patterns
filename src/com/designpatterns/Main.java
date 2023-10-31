@@ -1,18 +1,35 @@
 package com.designpatterns;
 
+import com.designpatterns.memento.Editor;
+import com.designpatterns.memento.History;
+
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("hey rakesh, kudose bro for learning design patterns");
 
+        var editor= new Editor();
+        var history=new History();
 
+        editor.setContent("c");
+        history.push(editor.createState());
+        editor.setContent("c++");
+        history.push(editor.createState());
+        editor.setContent("java");
+        history.push(editor.createState());
+        editor.restore(history.pop());
+        System.out.println(editor.getContent());
+        editor.restore(history.pop());
+        System.out.println(editor.getContent());
+        editor.restore(history.pop());
+        System.out.println(editor.getContent());
 
 //        User user = new User("Rakesh");
 //        user.printName();
 
         // Polymorphism
-        getDraw(new CheckBox());
-        getDraw(new TextBox());
+//        getDraw(new CheckBox());
+//        getDraw(new TextBox());
 
         // Inheritance
 //        var textBox=new TextBox();
