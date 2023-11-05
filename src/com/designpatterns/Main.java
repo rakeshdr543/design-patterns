@@ -1,5 +1,9 @@
 package com.designpatterns;
 
+import com.designpatterns.adapter.Assignment;
+import com.designpatterns.adapter.PenAdapter;
+import com.designpatterns.builder.Phone;
+import com.designpatterns.builder.PhoneBuilder;
 import com.designpatterns.factory.Android;
 import com.designpatterns.factory.OS;
 import com.designpatterns.factory.OSFactory;
@@ -15,6 +19,22 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("hey rakesh, kudose bro for learning design patterns");
 
+        // Composite Pattern
+
+
+
+        // Adapter Pattern
+//        var p=new PenAdapter();
+//        var assignment=new Assignment();
+//        assignment.setPen(p);
+//        assignment.writeAssignment();
+
+// Builder Pattern
+//        var phone=new Phone("android",5000,128,8,"Silver","Pro");
+//        System.out.println( phone);
+//
+//        Phone phoneB= new PhoneBuilder().setOs("android").setBattery(5000).setRam(12).setVariant("pro").setColor("Silver").buildPhone();
+//        System.out.println(phoneB);
 
         // Factory Pattern
 //        OSFactory osf=new OSFactory();
@@ -90,12 +110,12 @@ public class Main {
 //        System.out.println(ic.calculateIncome());
     }
 
-    public  static void getDraw(UIControl ui){
-         ui.draw();
-    }
-    public static IncomeCalculator2023 calculate(){
-        return new IncomeCalculator2023();
-    }
+//    public  static void getDraw(UIControl ui){
+//         ui.draw();
+//    }
+//    public static IncomeCalculator2023 calculate(){
+//        return new IncomeCalculator2023();
+//    }
 
 
 }
