@@ -1,5 +1,8 @@
 package com.designpatterns;
 
+import com.designpatterns.factory.Android;
+import com.designpatterns.factory.OS;
+import com.designpatterns.factory.OSFactory;
 import com.designpatterns.memento.Editor;
 import com.designpatterns.memento.History;
 import com.designpatterns.state.BrushTool;
@@ -12,25 +15,38 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("hey rakesh, kudose bro for learning design patterns");
 
+
+        // Factory Pattern
+//        OSFactory osf=new OSFactory();
+//        OS os1=osf.getInstance("android");
+//        os1.spec();
+//        OS os2=osf.getInstance("ios");
+//        os2.spec();
+
         // State Pattern
-        var canvas=new Canvas();
-        canvas.setCurrentTool(new BrushTool());
-        var ct1= canvas.getCurrentTool();
-        ct1.mouseDown();
-        ct1.mouseUp();
+//        var canvas=new Canvas();
+//        canvas.setCurrentTool(new BrushTool());
+//        var ct1= canvas.getCurrentTool();
+//        ct1.mouseDown();
+//        ct1.mouseUp();
+//
+//        canvas.setCurrentTool(new SelectionTool());
+//        var ct2= canvas.getCurrentTool();
+//        ct2.mouseDown();
+//        ct2.mouseUp();
+//
+//        canvas.setCurrentTool(new EraserTool());
+//        var ct3= canvas.getCurrentTool();
+//        ct3.mouseDown();
+//        ct3.mouseUp();
 
-        canvas.setCurrentTool(new SelectionTool());
-        var ct2= canvas.getCurrentTool();
-        ct2.mouseDown();
-        ct2.mouseUp();
 
-        canvas.setCurrentTool(new EraserTool());
-        var ct3= canvas.getCurrentTool();
-        ct3.mouseDown();
-        ct3.mouseUp();
+
+
+        // Memento Pattern
 //        var editor= new Editor();
 //        var history=new History();
-// // Memento Pattern
+//
 //        editor.setContent("c");
 //        history.push(editor.createState());
 //        editor.setContent("c++");
