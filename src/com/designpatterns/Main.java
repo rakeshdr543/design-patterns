@@ -4,11 +4,19 @@ import com.designpatterns.adapter.Assignment;
 import com.designpatterns.adapter.PenAdapter;
 import com.designpatterns.builder.Phone;
 import com.designpatterns.builder.PhoneBuilder;
+import com.designpatterns.composite.Component;
+import com.designpatterns.composite.Composite;
+import com.designpatterns.composite.LeafComponent;
 import com.designpatterns.factory.Android;
 import com.designpatterns.factory.OS;
 import com.designpatterns.factory.OSFactory;
 import com.designpatterns.memento.Editor;
 import com.designpatterns.memento.History;
+import com.designpatterns.observerPattern.observable.IphoneObservable;
+import com.designpatterns.observerPattern.observable.StockObservable;
+import com.designpatterns.observerPattern.observer.EmailNotification;
+import com.designpatterns.observerPattern.observer.MobileNotification;
+import com.designpatterns.observerPattern.observer.NotificationAlertObserver;
 import com.designpatterns.state.BrushTool;
 import com.designpatterns.state.Canvas;
 import com.designpatterns.state.EraserTool;
@@ -19,8 +27,43 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("hey rakesh, kudose bro for learning design patterns");
 
-        // Composite Pattern
+        StockObservable iphoneObservable= new IphoneObservable();
+        NotificationAlertObserver emailObserver= new EmailNotification("rakesh@mail.com",iphoneObservable);
+        NotificationAlertObserver mobileObserver=new MobileNotification("956745367634",iphoneObservable);
 
+        iphoneObservable.add(emailObserver);
+        iphoneObservable.add(mobileObserver);
+
+
+        iphoneObservable.addStockCount(10);
+        iphoneObservable.addStockCount(0);
+        iphoneObservable.addStockCount(100);
+
+//        // Composite Pattern
+//        Component hd=new LeafComponent(4500,"Harddrive");
+//        Component cpu = new LeafComponent(8000,"CPU");
+//        Component ram = new LeafComponent(3500,"RAM");
+//        Component monitor=new LeafComponent(9000,"Monitor");
+//        Component mouse=new LeafComponent(500,"Mouse");
+//
+//
+//        Composite mb=new Composite("MotherBoard");
+//        mb.addComponents(cpu);
+//        mb.addComponents(ram);
+//
+//        Composite pp=new Composite("Peripheral");
+//        pp.addComponents(monitor);
+//        pp.addComponents(mouse);
+//
+//        Composite cab=new Composite("Cabinet");
+//        cab.addComponents(hd);
+//        cab.addComponents(mb);
+//
+//        Composite computer=new Composite("Computer");
+//        computer.addComponents(pp);
+//        computer.addComponents(cab);
+//
+//        computer.showPrice();
 
 
         // Adapter Pattern
