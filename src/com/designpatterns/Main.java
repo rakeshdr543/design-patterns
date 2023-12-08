@@ -7,6 +7,7 @@ import com.designpatterns.builder.PhoneBuilder;
 import com.designpatterns.composite.Component;
 import com.designpatterns.composite.Composite;
 import com.designpatterns.composite.LeafComponent;
+import com.designpatterns.decorator.*;
 import com.designpatterns.factory.Android;
 import com.designpatterns.factory.OS;
 import com.designpatterns.factory.OSFactory;
@@ -21,23 +22,42 @@ import com.designpatterns.state.BrushTool;
 import com.designpatterns.state.Canvas;
 import com.designpatterns.state.EraserTool;
 import com.designpatterns.state.SelectionTool;
+import com.designpatterns.strategy.*;
 
 public class Main {
 
     public static void main(String[] args) {
         System.out.println("hey rakesh, kudose bro for learning design patterns");
 
-        StockObservable iphoneObservable= new IphoneObservable();
-        NotificationAlertObserver emailObserver= new EmailNotification("rakesh@mail.com",iphoneObservable);
-        NotificationAlertObserver mobileObserver=new MobileNotification("956745367634",iphoneObservable);
+        // Decorator Pattern
+        BasePizza pizza= new Mushroom(new ExtraCheese(
+         new Margharita()));
+                System.out.println("Pizza cost "+ pizza.getCost());
 
-        iphoneObservable.add(emailObserver);
-        iphoneObservable.add(mobileObserver);
+        // Strategy Pattern
+//
+//
+//        PassengerCar passengerCar= new PassengerCar();
+//        passengerCar.drive();
+//
+//        SportVehicle sportVehicle= new SportVehicle();
+//        sportVehicle.drive();
+//
+//        OffRoadVehicle offRoadVehicle=new OffRoadVehicle();
+//        offRoadVehicle.drive();
 
-
-        iphoneObservable.addStockCount(10);
-        iphoneObservable.addStockCount(0);
-        iphoneObservable.addStockCount(100);
+        // Observer Pattern
+//        StockObservable iphoneObservable= new IphoneObservable();
+//        NotificationAlertObserver emailObserver= new EmailNotification("rakesh@mail.com",iphoneObservable);
+//        NotificationAlertObserver mobileObserver=new MobileNotification("956745367634",iphoneObservable);
+//
+//        iphoneObservable.add(emailObserver);
+//        iphoneObservable.add(mobileObserver);
+//
+//
+//        iphoneObservable.addStockCount(10);
+//        iphoneObservable.addStockCount(0);
+//        iphoneObservable.addStockCount(100);
 
 //        // Composite Pattern
 //        Component hd=new LeafComponent(4500,"Harddrive");
